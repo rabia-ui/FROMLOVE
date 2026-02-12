@@ -17,6 +17,7 @@ body{
     align-items:center;
     justify-content:center;
     overflow:hidden;
+    padding:10px;
 }
 
 /* floating hearts background */
@@ -33,14 +34,14 @@ body{
     to{transform:translateY(-120vh) scale(1.5)}
 }
 
-/* card */
+/* container card */
 .container{
-    background:rgba(255,255,255,.9);
-    padding:40px 35px;
-    border-radius:30px;
-    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    background:rgba(255,255,255,.95);
+    padding:35px 25px;
+    border-radius:25px;
+    box-shadow:0 12px 28px rgba(0,0,0,.15);
     text-align:center;
-    max-width:650px;
+    max-width:100%;
     animation:fadeIn .9s ease;
 }
 @keyframes fadeIn{
@@ -51,31 +52,31 @@ body{
 /* title */
 h1{
     font-family:'Dancing Script',cursive;
-    font-size:3.2em;
+    font-size:2.4em;
     color:#d6336c;
-    margin-bottom:15px;
-    text-shadow:0 0 15px rgba(255,105,135,.5);
+    margin-bottom:12px;
+    text-shadow:0 0 12px rgba(255,105,135,.5);
     animation:bounce 2.5s infinite;
 }
 @keyframes bounce{
     0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-10px)}
+    50%{transform:translateY(-8px)}
 }
 
 .message{
-    line-height:1.8;
-    font-size:1.2em;
+    line-height:1.6;
+    font-size:1em;
     margin-top:10px;
-    margin-bottom:25px;
-    padding:20px 25px;
-    border-radius:20px;
+    margin-bottom:20px;
+    padding:18px 20px;
+    border-radius:18px;
     background:#fff0f5;
     border:2px solid #ffb3c6;
 }
 
 .hearts{
-    font-size:2.2em;
-    margin:15px 0 25px;
+    font-size:1.8em;
+    margin:12px 0 20px;
     animation:pulse 1.8s infinite;
 }
 @keyframes pulse{
@@ -86,30 +87,32 @@ h1{
 .buttons{
     display:flex;
     justify-content:center;
-    gap:25px;
+    gap:20px;
+    flex-wrap:wrap;
 }
 button{
     border:none;
     border-radius:50px;
-    padding:14px 30px;
-    font-size:1.2em;
+    padding:12px 25px;
+    font-size:1em;
     cursor:pointer;
     transition:.3s;
     box-shadow:0 5px 15px rgba(0,0,0,.2);
+    min-width:120px;
 }
 .yes{
     background:linear-gradient(45deg,#ff4d6d,#ff8fab);
     color:white;
 }
 .yes:hover{
-    transform:scale(1.15) rotate(-2deg);
+    transform:scale(1.12) rotate(-1deg);
 }
 .no{
     background:linear-gradient(45deg,#ffd166,#f77f00);
     color:white;
 }
 .no:hover{
-    transform:translateX(70px);
+    transform:translateX(50px);
 }
 
 /* love screen */
@@ -121,7 +124,7 @@ button{
 }
 .loveText{
     font-family:'Dancing Script',cursive;
-    font-size:4em;
+    font-size:3em;
     color:#ff4d6d;
     animation:pop 1s ease forwards, glow 2s infinite alternate;
 }
@@ -130,10 +133,18 @@ button{
     to{transform:scale(1);opacity:1}
 }
 @keyframes glow{
-    from{text-shadow:0 0 10px #ff8fab}
-    to{text-shadow:0 0 25px #ff4d6d}
+    from{text-shadow:0 0 8px #ff8fab}
+    to{text-shadow:0 0 20px #ff4d6d}
 }
 
+/* Media queries for phones */
+@media(max-width:480px){
+    h1{font-size:2em;}
+    .message{font-size:.95em;padding:15px;}
+    .hearts{font-size:1.5em;}
+    button{font-size:.95em;padding:10px 20px;}
+    .loveText{font-size:2.5em;}
+}
 </style>
 </head>
 <body>
@@ -171,8 +182,8 @@ In your arms, I feel safe, loved, and complete. 🤗<br><br>
 
 <!-- love screen -->
 <div id="love">
-<div class="loveText">I love u gonchu and my ullu ❤️</div>
-<div style="font-size:2.5em;margin-top:20px;">💖💕💗💓💘❤️</div>
+<div class="loveText">I love u gonchu and my ullu From ur Gullay jani❤️</div>
+<div style="font-size:2em;margin-top:15px;">💖💕💗💓💘❤️</div>
 </div>
 
 <script>
@@ -184,4 +195,3 @@ document.getElementById("love").style.display="flex";
 
 </body>
 </html>
-
