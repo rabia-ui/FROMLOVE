@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(135deg,#ffd6e0,#ffeef2,#ffc2d1);
+    margin:0;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+/* floating hearts background */
+.bg-hearts span{
+    position:absolute;
+    bottom:-50px;
+    font-size:24px;
+    animation:floatUp 12s linear infinite;
+    opacity:.7;
+}
+.bg-hearts span:nth-child(odd){animation-duration:10s}
+@keyframes floatUp{
+    from{transform:translateY(0) scale(1)}
+    to{transform:translateY(-120vh) scale(1.5)}
+}
+
+/* card */
+.container{
+    background:rgba(255,255,255,.9);
+    padding:40px 35px;
+    border-radius:30px;
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+    text-align:center;
+    max-width:650px;
+    animation:fadeIn .9s ease;
+}
+@keyframes fadeIn{
+    from{opacity:0;transform:scale(.9)}
+    to{opacity:1;transform:scale(1)}
+}
+
+/* title */
+h1{
+    font-family:'Dancing Script',cursive;
+    font-size:3.2em;
+    color:#d6336c;
+    margin-bottom:15px;
+    text-shadow:0 0 15px rgba(255,105,135,.5);
+    animation:bounce 2.5s infinite;
+}
+@keyframes bounce{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+.message{
+    line-height:1.8;
+    font-size:1.2em;
+    margin-top:10px;
+    margin-bottom:25px;
+    padding:20px 25px;
+    border-radius:20px;
+    background:#fff0f5;
+    border:2px solid #ffb3c6;
+}
+
+.hearts{
+    font-size:2.2em;
+    margin:15px 0 25px;
+    animation:pulse 1.8s infinite;
+}
+@keyframes pulse{
+    50%{transform:scale(1.1)}
+}
+
+/* buttons */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:25px;
+}
+button{
+    border:none;
+    border-radius:50px;
+    padding:14px 30px;
+    font-size:1.2em;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+}
+.yes{
+    background:linear-gradient(45deg,#ff4d6d,#ff8fab);
+    color:white;
+}
+.yes:hover{
+    transform:scale(1.15) rotate(-2deg);
+}
+.no{
+    background:linear-gradient(45deg,#ffd166,#f77f00);
+    color:white;
+}
+.no:hover{
+    transform:translateX(70px);
+}
+
+/* love screen */
+#love{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+.loveText{
+    font-family:'Dancing Script',cursive;
+    font-size:4em;
+    color:#ff4d6d;
+    animation:pop 1s ease forwards, glow 2s infinite alternate;
+}
+@keyframes pop{
+    from{transform:scale(.3);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+@keyframes glow{
+    from{text-shadow:0 0 10px #ff8fab}
+    to{text-shadow:0 0 25px #ff4d6d}
+}
+
+</style>
+</head>
+<body>
+
+<!-- floating hearts -->
+<div class="bg-hearts">
+<span style="left:10%">💖</span>
+<span style="left:25%">💕</span>
+<span style="left:40%">💗</span>
+<span style="left:55%">💓</span>
+<span style="left:70%">💘</span>
+<span style="left:85%">❤️</span>
+</div>
+
+<!-- main card -->
+<div class="container" id="main">
+<h1>Will You Be My Valentine? ❤️</h1>
+
+<div class="message">
+In your eyes, I find the warmth of a thousand sunsets. 🌅<br>
+Your laughter is the melody that dances in my soul. 🎶<br>
+With every beat of my heart, I cherish the love we share. 💓<br>
+You are my forever, my dream come true. ✨<br>
+In your arms, I feel safe, loved, and complete. 🤗<br><br>
+<b>Will you be my Valentine? 💕</b>
+</div>
+
+<div class="hearts">💖 💕 💗 💓 💘</div>
+
+<div class="buttons">
+<button class="yes" onclick="showLove()">Yes 💖</button>
+<button class="no" onclick="alert('No option unavailable 😌❤️')">No</button>
+</div>
+</div>
+
+<!-- love screen -->
+<div id="love">
+<div class="loveText">I love u Hamza ❤️</div>
+<div style="font-size:2.5em;margin-top:20px;">💖💕💗💓💘❤️</div>
+</div>
+
+<script>
+function showLove(){
+document.getElementById("main").style.display="none";
+document.getElementById("love").style.display="flex";
+}
+</script>
+
+</body>
+</html>
